@@ -1,0 +1,93 @@
+.table-wrapper {
+    overflow-x: auto; /* cho phép người dùng cuộn ngang nếu bảng quá rộng */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+  }
+
+  tr.search {
+    height: 60px; /* tăng chiều cao lên 60px */
+  }
+  
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  td img {
+    display: block; /* đảm bảo ảnh nằm trung tâm theo chiều ngang */
+    margin: auto; /* căn giữa ảnh theo chiều ngang và dọc */
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  img {
+    width: 150px;
+    height: 350px;
+  }
+  
+  input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  
+  /* Responsive design */
+  @media screen and (max-width: 600px) {
+    /* Nếu màn hình nhỏ hơn 600px thì hiển thị bảng dạng block */
+    .table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+  
+    /* Ẩn tiêu đề cột */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    /* Tạo margin giữa các ô */
+    td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    td:before {
+      position: absolute;
+      left: 6px;
+      content: attr(data-title);
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+
+    
+  
